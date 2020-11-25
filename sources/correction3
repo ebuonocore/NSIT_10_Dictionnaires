@@ -1,0 +1,9 @@
+# 12 - Quel est le type de la valeur associée à la clé 'people'? 
+type(resultat2['people'])
+
+# 13 - Quel est le type du premier élément de resultat2['people'] ?
+type(resultat2['people'][0])
+# resultat2['people'] est donc une liste de dictionnaires. Aussi appelé p-uplet nommé.
+
+# 14- Affichez le nom du premier habitant de l'ISS listé.
+resultat2['people'][0]['name']
