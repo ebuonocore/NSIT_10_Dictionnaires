@@ -1,0 +1,27 @@
+# 1- Listez l'ensemble des clefs: 
+Fiche_ISS.keys()
+# ou encore:
+Fiche_ISS
+
+# 2- Listez l'ensemble des valeurs de notre dictionnaire:
+Fiche_ISS.values()
+
+# 3- Affichez l'ensemble des couples clé-valeur:
+for k,v in Fiche_ISS.items():
+    print(k,v)
+# 4- Est-ce que le dictionnaire contient la clé 'Hauteur_orbite_km' ?
+'Hauteur_orbite_km'in Fiche_ISS.keys()
+# ou encore:
+'Hauteur_orbite_km'in Fiche_ISS
+
+5- Ajoutez la clé 'Nombre_habitants_max' associé à la valeur 9
+Fiche_ISS['Nombre_habitants_max'] = 9
+
+6- Supprimer la clé 'Date_de_lancement'
+del Fiche_ISS['Date_de_lancement']
+# Remarque: Si vous relancez la suppression alors que la cle n'existe plus, vous leverez une 'KeyError'
+for k,v in Fiche_ISS.items():
+    print(k,v)
+    
+7- Affichez la taille du dictionnaire Fiche_ISS
+len(Fiche_ISS)
