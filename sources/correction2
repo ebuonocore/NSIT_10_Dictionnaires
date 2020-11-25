@@ -1,0 +1,17 @@
+# 8- Quel est le type de resultat1?
+type(resultat1)
+
+# 9- Quels sont les types des valeurs associées aux clés 'timestamp' et 'iss_position'?
+t1 = type(resultat1['timestamp'])
+print(f'La valeur associée à timestamp est de type {t1}')
+t2 = type(resultat1['iss_position'])
+print(f'La valeur associée à timestamp est de type {t2}')
+
+# 10- Affichez la lattitude et la longitude de l'ISS
+latitude = resultat1['iss_position']['latitude']
+longitude = resultat1['iss_position']['longitude']
+print(f'Coordonées GPS ({latitude},{longitude})')
+
+# 11- Copier/coller l'adresse url1 dans votre navigateur.
+# Dans le menu "En-tête", à quoi correspond la clé "User-Agent" ? Informations sur la source de la requête : Navigateur et système d'exploitation du client
+# Dans quel menu retrouve-t-on la mise en forme des données telle que nous l'avons reçue dans resutat1 ? Dans le menu 'Données Brutes'
