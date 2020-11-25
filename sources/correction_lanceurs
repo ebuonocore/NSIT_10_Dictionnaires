@@ -1,4 +1,5 @@
 import requests
+import operator
 
 resp = requests.get('https://launchlibrary.net/1.3/launch?next=100')
 if resp.status_code != 200:
@@ -14,4 +15,7 @@ for dico in reponse:
             lanceurs[lanceur] += 1
     if nom_lanceur not in lanceurs:
         lanceurs[nom_lanceur] = 1
-lanceurs
+
+
+tri_lanceurs = sorted(lanceurs.items(), key=operator.itemgetter(1), reverse=True)
+tri_lanceurs
