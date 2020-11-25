@@ -5,14 +5,14 @@ resp = requests.get('https://launchlibrary.net/1.3/launch?next=5')
 # Cherchez dans cette liste le nombre de lancements prévu par le lanceur 'Falcon'.*
 # > Il faut d'abord récupérer le nom du lancement
 for dico in reponse:
-    nom_lanceur = dico['name'] # Permet de lister tous les noms des lancement
+    nom_lanceur = dico['name'] # Permet de lister tous les noms des lancements
 # > Ensuite le test 'Falcon' in nom_lanceur renvoie True si le lanceur est bien un Falcon.
 
 # Cherchez le nombre de lancements prévus pour chacun des lanceurs du dictionnaire lanceurs
-# > Pour chaque lancement, il faut recherche la présence d'une des clé du dictionnaire lanceurs.
+# > Pour chaque lancement, il faut recherche la présence d'une des clés du dictionnaire lanceurs.
 # > Si on en trouve un, on incrémente la valeur liée à cette clé.
 
-# > Remarque: split() permet de décomposer une chaine de caractère en liste des éléments séparés par un espace.
+# > Remarque: split() permet de décomposer une chaine de caractères en liste des éléments séparés par un espace.
 'Angara A5/Briz-M | Dummy payload'.split()
 # renvoie ['Angara', 'A5/Briz-M', '|', 'Dummy', 'payload']
 'Angara A5/Briz-M | Dummy payload'.split()[0]
