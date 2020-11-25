@@ -1,21 +1,27 @@
-import requests
-import operator
+# Importation des bibliothèques
+import requests # Permet de gérer les requêtes 'requests.get'
+import operator # Permet de trier selon un item 'operator.itemgetter()''
 
+# Lance la requête
 resp = requests.get('https://launchlibrary.net/1.3/launch?next=100')
+# Détection d'erreur
 if resp.status_code != 200:
-    # This means something went wrong.
+    # Si status_code vaut 200, cela veut dire que la requête a rencontré un problème
     raise ApiError('GET /tasks/ {}'.format(resp.status_code))
-reponse = resp.json()['launches']
+# On récupère la valeur associé à la clé 'launches'
+reponse = resp.json()['launches'] # reponse contient alors la liste des lancements
+# Création de la liste des lanceurs.
 lanceurs = {'Angara':0, 'Soyuz':0, 'Falcon':0, 'Ariane':0 , 'Delta':0, 'Atlas':0}
 
+# Itération de chaque éléments de réponse: Ce sont des dictionnaires
 for dico in reponse:
-    nom_lanceur = dico['name'].split()[0]
-    for lanceur in lanceurs:
-        if lanceur in dico['name']:
-            lanceurs[lanceur] += 1
+    nom_lanceur = dico['name'].split()[0] # On récupère le nom du lanceur
+    for lanceur in lanceurs: 
+        if lanceur in dico['name']:# On examine si ce lanceur apparait déjà dans le dictionnaire des lanceurs
+            lanceurs[lanceur] += 1 # Si c'est le cas, on incrémente le nombre de lancements
     if nom_lanceur not in lanceurs:
-        lanceurs[nom_lanceur] = 1
+        lanceurs[nom_lanceur] = 1 # Sinon, on créé cette clé, initialisé à 1
 
-
+# Tri le dictionnaire en fonction du nombre de lancements prévus.
 tri_lanceurs = sorted(lanceurs.items(), key=operator.itemgetter(1), reverse=True)
 tri_lanceurs
