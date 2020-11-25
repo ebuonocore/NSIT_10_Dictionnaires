@@ -8,7 +8,10 @@ reponse = resp.json()['launches']
 lanceurs = {'Angara':0, 'Soyuz':0, 'Falcon':0, 'Ariane':0 , 'Delta':0, 'Atlas':0}
 
 for dico in reponse:
+    nom_lanceur = dico['name'].split()[0]
     for lanceur in lanceurs:
         if lanceur in dico['name']:
             lanceurs[lanceur] += 1
-print(lanceurs)
+    if nom_lanceur not in lanceurs:
+        lanceurs[nom_lanceur] = 1
+lanceurs
